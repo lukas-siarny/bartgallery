@@ -1,0 +1,210 @@
+.main__gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.93%;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.card{
+    position: relative;
+    flex: 0 1 22.8%;
+    height: 0;
+    padding-bottom: 18.73%;
+    margin-bottom: 2.93%;
+    background: $colorPrimary;
+    transition: transform 250ms ease-in-out;
+    cursor: pointer;
+
+    &__wrapper{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & a{
+        width: 100%;
+        height: 100%;
+    }
+
+    &--existing{
+        overflow: hidden;
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.32);
+        -moz-box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.32);
+        box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.32);
+    }
+
+    &--add-new{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid $colorLight;
+        border-radius: 2px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &:hover .card__caption{
+        transform: translateY(0);
+    }
+
+    &__image-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 222;
+    }
+
+    &__image{
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        & img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            min-height: 100%;
+            min-width: 100%;
+            height: auto;
+        }
+    }
+
+    &__caption{
+        position: absolute;
+        min-height: 70px;
+        transform: translateY(30px);
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $colorPrimary;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 18px;
+        transition: transform 250ms ease-in-out;
+    }
+
+    &__name{
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $colorAccent;
+        font-size: 1rem;
+    }
+
+    &__photos-count{
+        transition: transform 250ms ease-in-out;
+        transform-origin: bottom;
+        transform: scale(1,0);
+    }
+
+    &__icon{
+        font-size: 2.5rem;
+        padding: 0.5rem;
+    }
+
+
+    &__icon-add-new{
+        transform: rotate(45deg);
+    }
+
+    &__empty{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    &__noimage-icon{
+        display: block;
+        font-size: 2.5rem;
+    }
+
+    &__delete-image{
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        color: $colorPrimary;
+        transform-origin: right top;
+        transition: transform 250ms ease-in-out;
+        z-index: 333;
+
+        &:hover{
+           transform: scale(2); 
+        }
+
+        & i{
+            filter:drop-shadow(0px 0px 2px rgba(0,0,0,0.3))
+        }
+    }
+}
+
+.card:hover .card__photos-count{
+    transform: scale(1,1);
+}
+
+@media(max-width: 1024px){
+    .main__gallery{
+        gap: 4%;
+    }
+
+    .card{
+        flex: 0 1 30.5%;
+        padding-bottom: 25.06%;
+        margin-bottom: 4%;   
+    }
+}
+
+@media(max-width: 768px){
+    .main__gallery{
+        gap: 6%;
+    }
+
+    .card{
+        flex: 0 1 47%;
+        padding-bottom: 38.619%;
+        margin-bottom: 6%;  
+    }
+}
+
+@media(max-width: 600px){
+
+    .card{
+
+        &__caption{
+            min-height: 60px;
+            transform: translateY(25px);
+            padding: 13px;
+        }
+    }
+}
+
+@media(max-width: 475px){
+    .main__gallery{
+        gap: 0;
+    }
+
+    .card{
+        flex: 0 1 100%;
+        padding-bottom: 82.16%; 
+    }
+}

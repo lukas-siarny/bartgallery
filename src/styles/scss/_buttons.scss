@@ -1,0 +1,56 @@
+.modal-button{
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: $colorPrimary;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 250ms ease-in-out;
+    justify-content: center;
+
+    &:hover{
+        transform: translateY(-5px);
+    }
+
+    &--add{
+        background: $success;
+    }
+
+    &--delete{
+        background: $warning;
+    }
+
+    &__icon-add-category{
+        margin-right: 0.5rem;
+        transform: rotate(45deg);
+    }
+
+    &__icon{
+        margin-right: 0.5rem;  
+    }
+}
+
+.mp-uploader__button{
+    background: none;
+    border: 3px solid $colorSecondary;
+    border-radius: 5px;
+    color: $colorSecondary;
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 1rem;
+}  
+
+
+@media(max-width: 500px){
+    .modal-button{
+        margin-top: 0.5rem;
+        width: 100%;
+    }  
+}

@@ -1,0 +1,18 @@
+@mixin fontSetup(){
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: $colorSecondary;   
+    font-weight: 400;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.success{
+    color: $success;
+}
+
+.warning{
+    color: $warning;
+}
