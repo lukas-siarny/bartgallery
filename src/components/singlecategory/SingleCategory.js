@@ -55,7 +55,7 @@ const SingleCategory = (props) => {
             .then(image => updateHeaderTheme(image))
             .catch(err => console.log(err));
         }
-    }, [status])
+    }, [status, path])
 
     return (
         <>

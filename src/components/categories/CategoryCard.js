@@ -61,7 +61,7 @@ const CategoryCard = ({gallery, scrollPosition}) => {
         getAllCategoryPhotos(path)
         .then(data => setNumberOfPhotos(data.images.length))
         .catch(err => console.log(err));
-    });
+    }, [status, fullpath, path]);
 
     let renderedImg;
 
