@@ -46,9 +46,10 @@ const Categories = () => {
             break;
         }
         case "rejected": {
-            renderedGalleries = <p>Erros. Something went wrong!</p>
+            renderedGalleries = <p>Error. Something went wrong!</p>
             break;
-        }
+        } default: 
+            renderedGalleries = <p>No galleries to show...</p>
     }
 
     return (

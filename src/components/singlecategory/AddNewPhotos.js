@@ -92,12 +92,13 @@ const AddNewPhotos = ({onCategoryStatusChange, path}) => {
     }
 
     const removeLoadedFile = file => {
-        setLoadedFiles(state => (state.filter(ldFile => ldFile != file)));
+        setLoadedFiles(state => (state.filter(ldFile => ldFile !== file)));
     }
 
+    /*
     const removeAllLoeadedFiles = () => {
         setLoadedFiles([]);
-    }
+    }*/
 
 
     const handleOnDragOver = e => {

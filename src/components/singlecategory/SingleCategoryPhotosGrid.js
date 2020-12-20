@@ -68,7 +68,7 @@ const SingleCategoryPhotosGrid = ({path, photos: {gallery, images}, status, onCa
             break;
         }
         case "fulfilled": {
-            renrederFullSizePhoto = <img src={currentImage} className="modal__image-shadow" />
+            renrederFullSizePhoto = <img src={currentImage} alt={currentImage} className="modal__image-shadow" />
             break;
         }
         case "rejected": {
@@ -83,8 +83,7 @@ const SingleCategoryPhotosGrid = ({path, photos: {gallery, images}, status, onCa
                 <div className="modal__noimage">
                     <i className="fas fa-image card__noimage-icon"></i>
                 </div>
-                )
-            break;
+            )
         }
     }
 
@@ -114,7 +113,9 @@ const SingleCategoryPhotosGrid = ({path, photos: {gallery, images}, status, onCa
         case "rejected": {
             renderedImages = <p>Error. Niečo sa pokazilo...</p>
             break;
-        }
+        } 
+        default: 
+            renderedImages = <p>No images to show...</p>
     }
 
     return (

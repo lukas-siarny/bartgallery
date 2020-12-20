@@ -10,7 +10,7 @@ const MultiplePhotosUploader = ({onUploadSubmit, onFileLoad, handleOnDragOver, l
                     {loadedFiles.length !== 0 && loadedFiles.map((file, index) => (
                         <div className="mp-uploader__image-wrapper" key={index}>
                             <div className="mp-uploader__image">
-                                <img src={file.data} />
+                                <img src={file.data} alt="" />
                                 <i className="far fa-trash-alt mp-uploader__delete-btn" onClick={()=> removeLoadedFile(file)}></i>
                             </div>
                         </div>    

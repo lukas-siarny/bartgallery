@@ -27,7 +27,7 @@ const PhotoCard = ({path, name, onPhotoClick, onCategoryStatusChange, scrollPosi
                 console.log(err);
             })
         }
-    }, [status])
+    }, [status, path])
 
     let renderedImg;
 
