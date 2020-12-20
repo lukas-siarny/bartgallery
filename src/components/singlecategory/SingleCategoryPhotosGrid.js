@@ -32,6 +32,10 @@ const SingleCategoryPhotosGrid = ({path, photos: {gallery, images}, status, onCa
         getFullSizeImage(fullpath);
     }
 
+    const handleModalClose = () => {
+        setModalPhotoVisibility(false);
+    }
+
     const handlePreviousImage = () => {
         if(currentPosition === 0){
             setCurrentPostion(images.length -1);
@@ -119,7 +123,7 @@ const SingleCategoryPhotosGrid = ({path, photos: {gallery, images}, status, onCa
 
             {modalPhotoVisiblity &&
                 <ModalPhoto 
-                    onModalClose={() => setModalPhotoVisibility(false)}
+                    onModalClose={handleModalClose}
                     onPreviousImage={handlePreviousImage}
                     onNextImage={handleNextImage}
                 >

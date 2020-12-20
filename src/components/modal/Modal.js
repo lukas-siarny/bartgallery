@@ -24,7 +24,7 @@ const Modal = ({children, onModalClose}) => {
                     {children}
                 </div>   
             </div>     
-         </div>
+        </div>
     )
 }
 

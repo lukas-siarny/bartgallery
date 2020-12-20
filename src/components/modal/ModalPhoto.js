@@ -4,12 +4,27 @@ const ModalPhoto = ({children, onModalClose, onPreviousImage, onNextImage}) => {
     const windowOffset = window.scrollY;
     const modalRef = useRef(null);
 
+    const handleKeyDown = e => {
+        if(e.keyCode === 27){
+            onModalClose();
+        } else if (e.keyCode === 39){
+            onNextImage();
+        } else if (e.keyCode === 37){
+            onPreviousImage();
+        }
+    }
+
     useEffect(()=>{
         document.body.setAttribute("style", `position: fixed; left: 0; right: 0; top: -${windowOffset}px`);
         modalRef.current.classList.add("modal--is-visible");
+
+        document.addEventListener("keydown", handleKeyDown, false);
+        
         return () => {
             document.body.setAttribute("style", "");
             window.scrollTo(0, windowOffset);
+
+            document.removeEventListener("keydown", handleKeyDown, false);
         }
     })
 
